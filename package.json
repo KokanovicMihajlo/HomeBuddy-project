@@ -1,0 +1,22 @@
+{
+  "name": "homebuddy-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ui": "playwright test --ui"
+  },
+  "keywords": ["playwright", "automation", "testing", "homebuddy"],
+  "author": "QA Team",
+  "license": "ISC",
+  "description": "Playwright automation tests for HomeBuddy Kitchen Remodeling application",
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^25.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
