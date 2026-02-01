@@ -6,6 +6,13 @@ This project contains automated tests for the HomeBuddy Kitchen Remodeling appli
 
 ```
 homebuddy-automation/
+├── documentation/
+│   ├── 10 Detailed Test Cases for HomeBuddy App.md
+│   ├── Identified Bugs List.md
+│   ├── Scenario Selection for Automation.md
+│   ├── Test Suite Structure for HomeBuddy Application.md
+│   └── Top 3 Bug Reports.md
+│
 ├── src/
 │   └── pages/
 │       ├── BasePage.ts          # Base class for all page objects
