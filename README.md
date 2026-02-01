@@ -73,25 +73,16 @@ npm run test:report
 
 ## Test Cases Implemented
 
-### TC-005: Multi-Step Wizard Happy Path
+### TC-005: Multi-Step Wizard Happy Path (Consolidated End-to-End)
 
-This test suite verifies the successful completion of the HomeBuddy wizard flow:
+This test case verifies the successful completion of the entire HomeBuddy wizard flow in an end-to-end scenario:
 
-1. **Test 1: Complete Wizard Flow Successfully**
-   - Navigates to landing page
-   - Enters ZIP code 10001
-   - Completes all wizard steps with valid data
-   - Verifies successful redirect to Thank You page
+- Navigates to the landing page.
+- Enters a valid ZIP code (10001) to initiate the wizard.
+- Completes all 10 wizard steps, including the final phone number confirmation.
+- Utilizes **randomly generated email addresses and phone numbers** for each test run to ensure uniqueness and prevent data collision.
+- Verifies successful navigation to the "Thank You" page and the presence of a confirmation message.
 
-2. **Test 2: Maintain Data Integrity Through Wizard Steps**
-   - Verifies that data entered in one step is preserved
-   - Tests step progression with various inputs
-   - Confirms successful completion
-
-3. **Test 3: Handle Different Valid Inputs**
-   - Tests the wizard with alternative valid data
-   - Verifies flexibility of the system
-   - Confirms successful completion with different inputs
 
 ## Page Object Model
 
@@ -115,12 +106,12 @@ The project implements the Page Object Model (POM) design pattern for maintainab
 
 ### Test Data
 
-Default test data used in tests:
-- **ZIP Code**: 10001
+- **ZIP Code**: 10001 (for accessing the wizard)
 - **Kitchen Size**: 150 sq. ft.
 - **Name**: John Doe
-- **Email**: john.doe@example.com
-- **Phone**: 2025550123
+- **Email**: Dynamically generated using `EmailGenerator.ts`
+- **Phone**: Dynamically generated using `PhoneGenerator.ts`
+
 
 ## Locators Used
 
@@ -131,16 +122,18 @@ All locators are based on real components of the test environment:
 - Get Estimate Button: `button:has-text("Get estimate")`
 
 ### Wizard Steps
-- Kitchen Elements: `label:has-text("Kitchen cabinets")`, `label:has-text("Countertop(s)")`
+- Kitchen Elements: `label:has-text("Kitchen cabinets")`
 - Cabinet Action: `label:has-text("Replace all or most cabinets")`
 - Property Type: `label:has-text("Single family home")`
 - Mobile Home: `label:has-text("No")`
 - Homeowner: `label:has-text("Yes")`
 - Kitchen Size: `input[id="squareFeet"]`
 - Budget: `label:has-text("$10K to $30K")`
-- Name: `input[id="name"]`
+- Name: `input[id="fullName"]`
 - Email: `input[id="email"]`
-- Phone: `input[id="phone"]`
+- Phone: `input[id="phoneNumber"]`
+- Phone Confirmation Button: `button:has-text("Phone number is correct")`
+
 
 ### Common Elements
 - Next Button: `button:has-text("Next")`
@@ -197,7 +190,3 @@ When adding new tests:
 4. Add JSDoc comments
 5. Keep test data in test methods or configuration
 6. Use the Page Object Model pattern
-
-## Contact
-
-For questions or issues, contact the QA team.
