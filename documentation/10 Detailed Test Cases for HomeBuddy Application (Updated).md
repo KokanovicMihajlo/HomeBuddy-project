@@ -1,4 +1,4 @@
-# 10 Detailed Test Cases for HomeBuddy Application (Updated)
+# 10 Detailed Test Cases for HomeBuddy Application
 
 This document provides 10 detailed test cases for the HomeBuddy application, covering various functionalities and scenarios, including the newly accessible multi-step wizard.
 
